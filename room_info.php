@@ -1,6 +1,7 @@
 <?php
+
     // Connection to SQL Database
-    @require_once __DIR__ . '/databse.php';
+    @require_once __DIR__ . '/database.php';
 
     // Get room_id value from query strig
     $room_id = $_GET['id'];
@@ -18,7 +19,7 @@
     } elseif ($result) {
         echo "0 Results!";
     } else {
-        echo "Query Error!"
+        echo "Query Error!";
     }
 
     // Close connection after use
@@ -34,10 +35,11 @@
     <title>Room Info</title>
 </head>
 <body>
+
     
     <?php if(!empty($room)) { ?>
         <a href="index.php">Go back to Hotel Rooms</a>
-        <h1>Room n°<?php echo $room['room_number'] ?> details:</h1>
+        <h1>Room n°<?php echo $room['room_number']; ?> details:</h1>
 
         <ul>
             <li>Number of beds: <?php echo $room['beds']; ?></li>
